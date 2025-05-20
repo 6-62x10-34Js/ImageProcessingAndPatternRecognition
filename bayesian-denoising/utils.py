@@ -41,7 +41,7 @@ def validation_data(
 
 
 def train_data(w: int = 5):
-    imnames = [os.path.join('./train', name) for name in os.listdir('./train')]
+    imnames = [os.path.join('train', name) for name in os.listdir('train')]
     images = [imageio.imread(imname) / 255. for imname in imnames]
     patches = generate_patches(images, w)
     return patches - patches.mean(1, keepdims=True)
